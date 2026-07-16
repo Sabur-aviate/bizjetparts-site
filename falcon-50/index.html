@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Falcon 50 Parts | Verified Part Numbers by ATA Chapter | BizJetParts</title>
-<meta name="description" content="Dassault Falcon 50 parts sourcing — verified part numbers for TFE731-3 engines, landing gear, flight controls, and flap/slat assemblies. Submit a request and get a quote within 24 hours.">
+<title>Falcon 50 Parts | Reference Part Numbers by ATA Chapter | BizJetParts</title>
+<meta name="description" content="Dassault Falcon 50 parts sourcing — reference part numbers for TFE731-3 engines, landing gear, flight controls, and flap/slat assemblies. Submit a request and get a quote within 24 hours.">
 <link rel="canonical" href="https://www.bizjetparts.com/falcon-50/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="../css/style.css">
 
 <meta property="og:title" content="Falcon 50 Parts | BizJetParts">
-<meta property="og:description" content="Verified Dassault Falcon 50 part numbers by ATA chapter — engine, landing gear, and flight control components.">
+<meta property="og:description" content="Reference Dassault Falcon 50 part numbers by ATA chapter — engine, landing gear, and flight control components.">
 <meta property="og:type" content="website">
 
 <script type="application/ld+json">
@@ -32,17 +32,13 @@
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Dassault Falcon 50 Verified Parts",
+  "name": "Dassault Falcon 50 Reference Parts",
   "itemListElement": [
     {"@type":"Product","position":1,"name":"Engine Assembly, TFE731-3-1C","sku":"TFE731-3-1C","category":"Powerplant","brand":"Honeywell","isAccessoryOrSparePartFor":"Dassault Falcon 50"},
     {"@type":"Product","position":2,"name":"Thrust Reverser Assembly","sku":"F50B583110D1","category":"Exhaust / Thrust Reverser","isAccessoryOrSparePartFor":"Dassault Falcon 50"},
-    {"@type":"Product","position":3,"name":"Engine Inlet, LH","sku":"F50B581101011","category":"Exhaust / Thrust Reverser","isAccessoryOrSparePartFor":"Dassault Falcon 50"},
-    {"@type":"Product","position":4,"name":"Main Landing Gear, LH","sku":"C23791-1009","category":"Landing Gear","isAccessoryOrSparePartFor":"Dassault Falcon 50"},
-    {"@type":"Product","position":5,"name":"Nose Landing Gear","sku":"C23787-1006","category":"Landing Gear","isAccessoryOrSparePartFor":"Dassault Falcon 50"},
-    {"@type":"Product","position":6,"name":"Main Wheel Assembly","sku":"5003279-3","category":"Landing Gear","isAccessoryOrSparePartFor":"Dassault Falcon 50"},
-    {"@type":"Product","position":7,"name":"Elevator, LH","sku":"F50B341A1","category":"Flight Controls","isAccessoryOrSparePartFor":"Dassault Falcon 50"},
-    {"@type":"Product","position":8,"name":"Rudder","sku":"F50B321","category":"Flight Controls","isAccessoryOrSparePartFor":"Dassault Falcon 50"},
-    {"@type":"Product","position":9,"name":"Flight Management System, Universal UNS-1C","sku":"UNS-1C","category":"Avionics / FMS","brand":"Universal Avionics","isAccessoryOrSparePartFor":"Dassault Falcon 50"}
+    {"@type":"Product","position":3,"name":"Main Landing Gear, LH","sku":"C23791-1009","category":"Landing Gear","isAccessoryOrSparePartFor":"Dassault Falcon 50"},
+    {"@type":"Product","position":4,"name":"Elevator, LH","sku":"F50B341A1","category":"Flight Controls","isAccessoryOrSparePartFor":"Dassault Falcon 50"},
+    {"@type":"Product","position":5,"name":"Flight Management System, Universal UNS-1C","sku":"UNS-1C","category":"Avionics / FMS","brand":"Universal Avionics","isAccessoryOrSparePartFor":"Dassault Falcon 50"}
   ]
 }
 </script>
@@ -55,7 +51,7 @@
     {
       "@type": "Question",
       "name": "Does BizJetParts stock Falcon 50 parts, or source them on demand?",
-      "acceptedAnswer": {"@type": "Answer", "text": "BizJetParts does not hold physical inventory. We source Falcon 50 parts on demand through our supplier and broker network, then quote pricing and lead time once a part is located and verified."}
+      "acceptedAnswer": {"@type": "Answer", "text": "BizJetParts does not hold physical inventory. We source Falcon 50 parts on demand through our supplier and broker network, then quote pricing, condition, and documentation once a part is located."}
     },
     {
       "@type": "Question",
@@ -64,19 +60,14 @@
     },
     {
       "@type": "Question",
-      "name": "Does the Falcon 50 use a single FMS unit across all aircraft?",
-      "acceptedAnswer": {"@type": "Answer", "text": "No. Falcon 50 FMS fit varies by aircraft and retrofit history, most commonly Universal UNS-1C or UNS-1D units. Confirm the installed variant before requesting a quote."}
-    },
-    {
-      "@type": "Question",
       "name": "How long does it take to get a quote on a Falcon 50 part?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Typical response time is within 24 hours of submitting a part request."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Typical response time is within 24 hours of submitting a part request. AOG requests are handled with priority."}
     }
   ]
 }
 </script>
 </head>
-<body>
+<body class="has-sticky-cta">
 
 <header class="site-header">
   <div class="container">
@@ -87,20 +78,29 @@
       <a href="/hawker-900xp/">Hawker 900XP</a>
       <a href="/request/">Request a Part</a>
     </nav>
+    <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Open menu">&#9776;</button>
   </div>
 </header>
+<div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Close menu">&times;</button>
+  <a href="/falcon-50/">Falcon 50</a>
+  <a href="/hawker-850xp/">Hawker 850XP</a>
+  <a href="/hawker-900xp/">Hawker 900XP</a>
+  <a href="/request/" class="mobile-request-btn">Request a Part</a>
+</div>
 
 <main>
   <section class="aircraft-hero">
     <div class="container">
       <div class="breadcrumb"><a href="/">Home</a> / Falcon 50</div>
       <h1>Falcon 50 Parts</h1>
-      <p class="tagline">Verified part numbers for the Dassault Falcon 50 tri-jet, organized by ATA chapter. Every entry below is checked against a live supplier or OEM listing — no fabricated part numbers.</p>
+      <p class="tagline">Reference part numbers for the Dassault Falcon 50 tri-jet, organized by ATA chapter. Compiled from current supplier and OEM listings — not a complete parts catalogue.</p>
       <div class="spec-strip">
         <div><div class="label">Manufacturer</div><div class="value">Dassault Aviation</div></div>
         <div><div class="label">Configuration</div><div class="value">Tri-jet, long-range</div></div>
         <div><div class="label">Engines</div><div class="value">3× Honeywell TFE731-3</div></div>
-        <div><div class="label">Parts Listed</div><div class="value">23 verified</div></div>
+        <div><div class="label">Parts Listed</div><div class="value">23 reference</div></div>
       </div>
     </div>
   </section>
@@ -120,35 +120,37 @@
         <span class="parts-count" id="partsCount">23 parts</span>
       </div>
 
+      <div class="disclaimer-box">Part numbers are compiled from current supplier, manufacturer, and industry references. Confirm aircraft effectivity, configuration, and supersession status before purchase or installation.</div>
+
       <div class="table-scroll">
       <table class="parts-table" id="partsTable">
         <thead>
           <tr><th>ATA</th><th>System</th><th>Description</th><th>Part Number</th><th></th></tr>
         </thead>
         <tbody>
-          <tr data-system="Powerplant"><td><span class="ata-badge">72</span></td><td>Powerplant</td><td>Engine Assembly, TFE731-3-1C</td><td><span class="pn-tag">TFE731-3-1C</span></td><td><a class="req-link" href="/request/?part=TFE731-3-1C&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Exhaust / Thrust Reverser"><td><span class="ata-badge">78</span></td><td>Exhaust / Thrust Reverser</td><td>Thrust Reverser Assembly</td><td><span class="pn-tag">F50B583110D1</span></td><td><a class="req-link" href="/request/?part=F50B583110D1&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Exhaust / Thrust Reverser"><td><span class="ata-badge">78</span></td><td>Exhaust / Thrust Reverser</td><td>Engine Inlet, LH</td><td><span class="pn-tag">F50B581101011</span></td><td><a class="req-link" href="/request/?part=F50B581101011&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Exhaust / Thrust Reverser"><td><span class="ata-badge">78</span></td><td>Exhaust / Thrust Reverser</td><td>Engine Inlet, RH</td><td><span class="pn-tag">F50B581301011</span></td><td><a class="req-link" href="/request/?part=F50B581301011&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Landing Gear"><td><span class="ata-badge">32</span></td><td>Landing Gear</td><td>Main Landing Gear, LH</td><td><span class="pn-tag">C23791-1009</span></td><td><a class="req-link" href="/request/?part=C23791-1009&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Landing Gear"><td><span class="ata-badge">32</span></td><td>Landing Gear</td><td>Main Landing Gear, RH</td><td><span class="pn-tag">C23792-1009</span></td><td><a class="req-link" href="/request/?part=C23792-1009&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Landing Gear"><td><span class="ata-badge">32</span></td><td>Landing Gear</td><td>Nose Landing Gear</td><td><span class="pn-tag">C23787-1006</span></td><td><a class="req-link" href="/request/?part=C23787-1006&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Landing Gear"><td><span class="ata-badge">32</span></td><td>Landing Gear</td><td>Main Wheel Assembly</td><td><span class="pn-tag">5003279-3</span></td><td><a class="req-link" href="/request/?part=5003279-3&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Landing Gear"><td><span class="ata-badge">32</span></td><td>Landing Gear</td><td>Brake Assembly</td><td><span class="pn-tag">5000403</span></td><td><a class="req-link" href="/request/?part=5000403&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Elevator, LH</td><td><span class="pn-tag">F50B341A1</span></td><td><a class="req-link" href="/request/?part=F50B341A1&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Elevator, RH</td><td><span class="pn-tag">F50B342</span></td><td><a class="req-link" href="/request/?part=F50B342&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Rudder</td><td><span class="pn-tag">F50B321</span></td><td><a class="req-link" href="/request/?part=F50B321&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Flap, LH Inboard</td><td><span class="pn-tag">F50B161B2</span></td><td><a class="req-link" href="/request/?part=F50B161B2&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Flap, RH Inboard</td><td><span class="pn-tag">F50B162B2</span></td><td><a class="req-link" href="/request/?part=F50B162B2&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Flap, LH Outboard</td><td><span class="pn-tag">F50B163B2</span></td><td><a class="req-link" href="/request/?part=F50B163B2&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Flap, RH Outboard</td><td><span class="pn-tag">F50B164B2</span></td><td><a class="req-link" href="/request/?part=F50B164B2&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Slat, LH Outboard</td><td><span class="pn-tag">F50B134B2</span></td><td><a class="req-link" href="/request/?part=F50B134B2&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Slat, RH Outboard</td><td><span class="pn-tag">F50B144B2</span></td><td><a class="req-link" href="/request/?part=F50B144B2&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Slat, LH Inboard</td><td><span class="pn-tag">F50B133B2</span></td><td><a class="req-link" href="/request/?part=F50B133B2&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Slat, RH Inboard</td><td><span class="pn-tag">F50B143B2</span></td><td><a class="req-link" href="/request/?part=F50B143B2&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Air Brake / Trim Control Panel</td><td><span class="pn-tag">013015-14</span></td><td><a class="req-link" href="/request/?part=013015-14&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Avionics / FMS"><td><span class="ata-badge">34</span></td><td>Avionics / FMS</td><td>Flight Management System, Universal UNS-1C</td><td><span class="pn-tag">UNS-1C</span></td><td><a class="req-link" href="/request/?part=UNS-1C&ac=falcon-50">Request →</a></td></tr>
-          <tr data-system="Avionics / FMS"><td><span class="ata-badge">34</span></td><td>Avionics / FMS</td><td>Navigation Computer Unit, Universal UNS-1D</td><td><span class="pn-tag">1192-X0-1111XX</span></td><td><a class="req-link" href="/request/?part=1192-X0-1111XX&ac=falcon-50">Request →</a></td></tr>
+          <tr data-system="Powerplant"><td><span class="ata-badge">72</span></td><td>Powerplant</td><td>Engine Assembly, TFE731-3-1C</td><td><span class="pn-tag">TFE731-3-1C</span></td><td><a class="req-link" href="/request/?part=TFE731-3-1C&ac=falcon-50" aria-label="Request part TFE731-3-1C, Engine Assembly">Request →</a></td></tr>
+          <tr data-system="Exhaust / Thrust Reverser"><td><span class="ata-badge">78</span></td><td>Exhaust / Thrust Reverser</td><td>Thrust Reverser Assembly</td><td><span class="pn-tag">F50B583110D1</span></td><td><a class="req-link" href="/request/?part=F50B583110D1&ac=falcon-50" aria-label="Request part F50B583110D1, Thrust Reverser Assembly">Request →</a></td></tr>
+          <tr data-system="Exhaust / Thrust Reverser"><td><span class="ata-badge">78</span></td><td>Exhaust / Thrust Reverser</td><td>Engine Inlet, LH</td><td><span class="pn-tag">F50B581101011</span></td><td><a class="req-link" href="/request/?part=F50B581101011&ac=falcon-50" aria-label="Request part F50B581101011, Engine Inlet LH">Request →</a></td></tr>
+          <tr data-system="Exhaust / Thrust Reverser"><td><span class="ata-badge">78</span></td><td>Exhaust / Thrust Reverser</td><td>Engine Inlet, RH</td><td><span class="pn-tag">F50B581301011</span></td><td><a class="req-link" href="/request/?part=F50B581301011&ac=falcon-50" aria-label="Request part F50B581301011, Engine Inlet RH">Request →</a></td></tr>
+          <tr data-system="Landing Gear"><td><span class="ata-badge">32</span></td><td>Landing Gear</td><td>Main Landing Gear, LH</td><td><span class="pn-tag">C23791-1009</span></td><td><a class="req-link" href="/request/?part=C23791-1009&ac=falcon-50" aria-label="Request part C23791-1009, Main Landing Gear LH">Request →</a></td></tr>
+          <tr data-system="Landing Gear"><td><span class="ata-badge">32</span></td><td>Landing Gear</td><td>Main Landing Gear, RH</td><td><span class="pn-tag">C23792-1009</span></td><td><a class="req-link" href="/request/?part=C23792-1009&ac=falcon-50" aria-label="Request part C23792-1009, Main Landing Gear RH">Request →</a></td></tr>
+          <tr data-system="Landing Gear"><td><span class="ata-badge">32</span></td><td>Landing Gear</td><td>Nose Landing Gear</td><td><span class="pn-tag">C23787-1006</span></td><td><a class="req-link" href="/request/?part=C23787-1006&ac=falcon-50" aria-label="Request part C23787-1006, Nose Landing Gear">Request →</a></td></tr>
+          <tr data-system="Landing Gear"><td><span class="ata-badge">32</span></td><td>Landing Gear</td><td>Main Wheel Assembly</td><td><span class="pn-tag">5003279-3</span></td><td><a class="req-link" href="/request/?part=5003279-3&ac=falcon-50" aria-label="Request part 5003279-3, Main Wheel Assembly">Request →</a></td></tr>
+          <tr data-system="Landing Gear"><td><span class="ata-badge">32</span></td><td>Landing Gear</td><td>Brake Assembly</td><td><span class="pn-tag">5000403</span></td><td><a class="req-link" href="/request/?part=5000403&ac=falcon-50" aria-label="Request part 5000403, Brake Assembly">Request →</a></td></tr>
+          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Elevator, LH</td><td><span class="pn-tag">F50B341A1</span></td><td><a class="req-link" href="/request/?part=F50B341A1&ac=falcon-50" aria-label="Request part F50B341A1, Elevator LH">Request →</a></td></tr>
+          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Elevator, RH</td><td><span class="pn-tag">F50B342</span></td><td><a class="req-link" href="/request/?part=F50B342&ac=falcon-50" aria-label="Request part F50B342, Elevator RH">Request →</a></td></tr>
+          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Rudder</td><td><span class="pn-tag">F50B321</span></td><td><a class="req-link" href="/request/?part=F50B321&ac=falcon-50" aria-label="Request part F50B321, Rudder">Request →</a></td></tr>
+          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Flap, LH Inboard</td><td><span class="pn-tag">F50B161B2</span></td><td><a class="req-link" href="/request/?part=F50B161B2&ac=falcon-50" aria-label="Request part F50B161B2, Flap LH Inboard">Request →</a></td></tr>
+          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Flap, RH Inboard</td><td><span class="pn-tag">F50B162B2</span></td><td><a class="req-link" href="/request/?part=F50B162B2&ac=falcon-50" aria-label="Request part F50B162B2, Flap RH Inboard">Request →</a></td></tr>
+          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Flap, LH Outboard</td><td><span class="pn-tag">F50B163B2</span></td><td><a class="req-link" href="/request/?part=F50B163B2&ac=falcon-50" aria-label="Request part F50B163B2, Flap LH Outboard">Request →</a></td></tr>
+          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Flap, RH Outboard</td><td><span class="pn-tag">F50B164B2</span></td><td><a class="req-link" href="/request/?part=F50B164B2&ac=falcon-50" aria-label="Request part F50B164B2, Flap RH Outboard">Request →</a></td></tr>
+          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Slat, LH Outboard</td><td><span class="pn-tag">F50B134B2</span></td><td><a class="req-link" href="/request/?part=F50B134B2&ac=falcon-50" aria-label="Request part F50B134B2, Slat LH Outboard">Request →</a></td></tr>
+          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Slat, RH Outboard</td><td><span class="pn-tag">F50B144B2</span></td><td><a class="req-link" href="/request/?part=F50B144B2&ac=falcon-50" aria-label="Request part F50B144B2, Slat RH Outboard">Request →</a></td></tr>
+          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Slat, LH Inboard</td><td><span class="pn-tag">F50B133B2</span></td><td><a class="req-link" href="/request/?part=F50B133B2&ac=falcon-50" aria-label="Request part F50B133B2, Slat LH Inboard">Request →</a></td></tr>
+          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Slat, RH Inboard</td><td><span class="pn-tag">F50B143B2</span></td><td><a class="req-link" href="/request/?part=F50B143B2&ac=falcon-50" aria-label="Request part F50B143B2, Slat RH Inboard">Request →</a></td></tr>
+          <tr data-system="Flight Controls"><td><span class="ata-badge">27</span></td><td>Flight Controls</td><td>Air Brake / Trim Control Panel</td><td><span class="pn-tag">013015-14</span></td><td><a class="req-link" href="/request/?part=013015-14&ac=falcon-50" aria-label="Request part 013015-14, Air Brake Trim Control Panel">Request →</a></td></tr>
+          <tr data-system="Avionics / FMS"><td><span class="ata-badge">34</span></td><td>Avionics / FMS</td><td>Flight Management System, Universal UNS-1C</td><td><span class="pn-tag">UNS-1C</span></td><td><a class="req-link" href="/request/?part=UNS-1C&ac=falcon-50" aria-label="Request part UNS-1C, Flight Management System">Request →</a></td></tr>
+          <tr data-system="Avionics / FMS"><td><span class="ata-badge">34</span></td><td>Avionics / FMS</td><td>Navigation Computer Unit, Universal UNS-1D</td><td><span class="pn-tag">1192-X0-1111XX</span></td><td><a class="req-link" href="/request/?part=1192-X0-1111XX&ac=falcon-50" aria-label="Request part 1192-X0-1111XX, Navigation Computer Unit">Request →</a></td></tr>
         </tbody>
       </table>
       </div>
@@ -161,23 +163,21 @@
       <h2>Common Questions</h2>
       <div class="faq-item">
         <h3>Does BizJetParts stock Falcon 50 parts, or source them on demand?</h3>
-        <p>We don't hold physical inventory. We source parts on demand through our supplier and broker network, then quote pricing and lead time once a part is located and verified.</p>
+        <p>We don't hold physical inventory. We source parts on demand through our supplier and broker network, then quote pricing, condition, and documentation once a part is located.</p>
       </div>
       <div class="faq-item">
         <h3>What engine does the Falcon 50 use?</h3>
         <p>The Falcon 50 is a tri-jet powered by three Honeywell (Garrett) TFE731-3-1C turbofan engines.</p>
       </div>
       <div class="faq-item">
-        <h3>Does the Falcon 50 use a single FMS unit across all aircraft?</h3>
-        <p>No. FMS fit varies by aircraft and retrofit history — most commonly Universal UNS-1C or UNS-1D. Confirm your installed variant before requesting a quote.</p>
-      </div>
-      <div class="faq-item">
         <h3>How long does it take to get a quote?</h3>
-        <p>Typical response time is within 24 hours of submitting a part request.</p>
+        <p>Typical response time is within 24 hours of submitting a part request. AOG requests are handled with priority.</p>
       </div>
     </div>
   </section>
 </main>
+
+<div class="sticky-mobile-cta"><a href="/request/?ac=falcon-50">Request a Part</a></div>
 
 <footer class="site-footer">
   <div class="container foot-grid">
@@ -193,7 +193,7 @@
       <a href="mailto:info@aviateaviation.com">info@aviateaviation.com</a>
     </div>
   </div>
-  <div class="container copyright">© 2026 BizJetParts. A sourcing initiative of Aviate Aviation.</div>
+  <div class="container copyright">© 2026 BizJetParts. A sourcing initiative of Aviate Aviation. Part numbers are compiled from supplier and industry references; confirm effectivity, configuration, and supersession status before purchase or installation.</div>
 </footer>
 
 <script>
@@ -212,6 +212,9 @@ function filterParts() {
   });
   document.getElementById('partsCount').textContent = visible + ' parts';
 }
+function toggleMobileMenu(){document.getElementById('mobileMenu').classList.add('open');document.getElementById('mobileMenuOverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');document.getElementById('mobileMenuOverlay').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMobileMenu();});
 </script>
 
 </body>
