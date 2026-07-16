@@ -2,7 +2,7 @@
 
 > BizJetParts sources business jet parts — airframe, engine, and avionics components — for Falcon 50, Hawker 850XP, and Hawker 900XP operators, MROs, and engineers. BizJetParts does not hold physical inventory; it locates and verifies parts through a supplier and broker network and returns pricing and lead time, typically within 24 hours.
 
-BizJetParts is a sourcing initiative of Aviate Aviation LLC-FZ, an aircraft brokerage operating in Dubai and Toronto. Primary service regions: United States, Europe, Middle East.
+BizJetParts is a sourcing initiative of Aviate Aviation, an aircraft brokerage operating in Dubai and Toronto. Primary service regions: United States, Europe, Middle East.
 
 ## Aircraft Coverage
 
