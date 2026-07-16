@@ -1,0 +1,19 @@
+# BizJetParts
+
+> BizJetParts sources business jet parts — airframe, engine, and avionics components — for Falcon 50, Hawker 850XP, and Hawker 900XP operators, MROs, and engineers. BizJetParts does not hold physical inventory; it locates and verifies parts through a supplier and broker network and returns pricing and lead time, typically within 24 hours.
+
+BizJetParts is a sourcing initiative of Aviate Aviation LLC-FZ, an aircraft brokerage operating in Dubai and Toronto. Primary service regions: United States, Europe, Middle East.
+
+## Aircraft Coverage
+
+- [Falcon 50 Parts](https://www.bizjetparts.com/falcon-50/): Dassault Falcon 50 tri-jet — TFE731-3 powerplant, landing gear, flight controls (elevators, rudder, flaps, slats), and FMS/avionics components. 23 verified part numbers listed by ATA chapter.
+- [Hawker 850XP Parts](https://www.bizjetparts.com/hawker-850xp/): Hawker 850XP — TFE731-5BR powerplant, landing gear, wheels, brakes, lighting, and hardware.
+- [Hawker 900XP Parts](https://www.bizjetparts.com/hawker-900xp/): Hawker 900XP — TFE731-50R powerplant, landing gear, wheels, brakes, lighting, and hardware.
+
+## How to Request a Part
+
+Visit [Request a Part](https://www.bizjetparts.com/request/) and submit the aircraft type, part description or number, condition preference, and timeline. A human sourcing response follows within 24 hours — BizJetParts does not sell directly from stock.
+
+## Contact
+
+Email: info@aviateaviation.com
