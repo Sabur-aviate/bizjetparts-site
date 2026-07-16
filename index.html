@@ -13,13 +13,11 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%232C3E50'/%3E%3Ctext x='50' y='68' font-size='60' fill='%23FAF6EF' text-anchor='middle' font-family='Georgia,serif'%3EB%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="css/style.css">
 
-<!-- Open Graph -->
 <meta property="og:title" content="BizJetParts — Business Jet Parts Sourcing">
 <meta property="og:description" content="Sourcing hard-to-find parts for Falcon 50, Hawker 850XP and Hawker 900XP aircraft.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.bizjetparts.com/">
 
-<!-- JSON-LD: Organization + WebSite -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -46,7 +44,7 @@
 }
 </script>
 </head>
-<body>
+<body class="has-sticky-cta">
 
 <header class="site-header">
   <div class="container">
@@ -57,8 +55,17 @@
       <a href="/hawker-900xp/">Hawker 900XP</a>
       <a href="/request/">Request a Part</a>
     </nav>
+    <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Open menu">&#9776;</button>
   </div>
 </header>
+<div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Close menu">&times;</button>
+  <a href="/falcon-50/">Falcon 50</a>
+  <a href="/hawker-850xp/">Hawker 850XP</a>
+  <a href="/hawker-900xp/">Hawker 900XP</a>
+  <a href="/request/" class="mobile-request-btn">Request a Part</a>
+</div>
 
 <main>
   <section class="hero">
@@ -76,25 +83,25 @@
   <section class="section" id="aircraft">
     <div class="container">
       <h2>Browse by Aircraft</h2>
-      <p class="section-sub">Each aircraft page lists verified part numbers by ATA chapter, sourced against live supplier and OEM listings.</p>
+      <p class="section-sub">Each aircraft page lists reference part numbers by ATA chapter, compiled from current supplier and OEM listings. This is a growing reference catalogue, not a complete parts list.</p>
       <div class="aircraft-grid">
         <a href="/falcon-50/" class="aircraft-card">
           <span class="plate">Dassault · Tri-Jet</span>
           <h3>Falcon 50</h3>
           <p>Airframe, powerplant (TFE731-3), flight controls, and landing gear.</p>
-          <span class="count">23 verified parts listed →</span>
+          <span class="count">23 reference parts →</span>
         </a>
         <a href="/hawker-850xp/" class="aircraft-card">
           <span class="plate">Hawker Beechcraft · Twin-Jet</span>
           <h3>Hawker 850XP</h3>
           <p>Landing gear, brakes, lighting, and hardware components.</p>
-          <span class="count">23 verified parts listed →</span>
+          <span class="count">23 reference parts →</span>
         </a>
         <a href="/hawker-900xp/" class="aircraft-card">
           <span class="plate">Hawker Beechcraft · Twin-Jet</span>
           <h3>Hawker 900XP</h3>
           <p>TFE731-50R powerplant, landing gear, brakes, and consumables.</p>
-          <span class="count">24 verified parts listed →</span>
+          <span class="count">24 reference parts →</span>
         </a>
       </div>
     </div>
@@ -103,7 +110,7 @@
   <section class="section" style="background:#F3EFE4; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">
     <div class="container">
       <h2>How Sourcing Works</h2>
-      <p class="section-sub">We don't hold physical inventory. We work our supplier and broker network to locate, verify, and quote the part you need.</p>
+      <p class="section-sub">We don't hold physical inventory. We work our supplier and broker network to locate, verify documentation, and quote the part you need.</p>
       <div class="steps">
         <div class="step">
           <div class="num">1</div>
@@ -113,13 +120,28 @@
         <div class="step">
           <div class="num">2</div>
           <h3>We Source It</h3>
-          <p>We work supplier networks, OEM channels, and broker relationships to find the part and verify condition.</p>
+          <p>We work supplier networks, OEM channels, and broker relationships to find the part and review documentation.</p>
         </div>
         <div class="step">
           <div class="num">3</div>
           <h3>You Get a Quote</h3>
-          <p>Typical response within 24 hours with pricing, availability, and lead time.</p>
+          <p>Typical response within 24 hours with pricing, condition, documentation, and lead time.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Documentation & Traceability</h2>
+      <p class="section-sub">Aircraft parts require proper release documentation. Available release documentation, traceability, condition, serial number, and supplier status are identified in every quotation. Final suitability and installation eligibility remain subject to buyer and maintenance-provider approval.</p>
+      <div class="trust-grid">
+        <div class="trust-item"><span class="trust-label">Release Docs</span>FAA 8130-3, EASA Form 1, dual release where applicable</div>
+        <div class="trust-item"><span class="trust-label">Traceability</span>Certificate of Conformance, back-to-birth records where relevant</div>
+        <div class="trust-item"><span class="trust-label">Condition</span>New, new surplus, overhauled, repaired, serviceable, as-removed</div>
+        <div class="trust-item"><span class="trust-label">Purchase Type</span>Outright purchase or exchange, where available</div>
+        <div class="trust-item"><span class="trust-label">Logistics</span>Export and shipping support to your location</div>
+        <div class="trust-item"><span class="trust-label">Who We Are</span>Operated by Aviate Aviation, a Dubai- and Toronto-based aviation firm active in aircraft sales, acquisitions, and international sourcing relationships</div>
       </div>
     </div>
   </section>
@@ -129,12 +151,12 @@
       <h2>Why BizJetParts</h2>
       <div class="aircraft-grid">
         <div>
-          <h3 style="font-size:17px; margin-bottom:8px;">Verified, not guessed</h3>
-          <p style="font-size:14px; color:#5c6b78;">Every part number on this site is checked against live supplier or OEM listings — we don't publish placeholders.</p>
+          <h3 style="font-size:17px; margin-bottom:8px;">Reference data, not guesswork</h3>
+          <p style="font-size:14px; color:#5c6b78;">Part numbers are compiled from current supplier, manufacturer, and industry references — confirm aircraft effectivity and configuration before purchase.</p>
         </div>
         <div>
-          <h3 style="font-size:17px; margin-bottom:8px;">No inventory markup games</h3>
-          <p style="font-size:14px; color:#5c6b78;">We're a sourcing brokerage, not a warehouse. You get market pricing plus a transparent finder's fee.</p>
+          <h3 style="font-size:17px; margin-bottom:8px;">Market-driven sourcing</h3>
+          <p style="font-size:14px; color:#5c6b78;">We compare available supplier options and provide a clear quotation covering price, condition, documentation, and lead time.</p>
         </div>
         <div>
           <h3 style="font-size:17px; margin-bottom:8px;">Global reach</h3>
@@ -143,7 +165,17 @@
       </div>
     </div>
   </section>
+
+  <section class="supplier-cta">
+    <div class="container">
+      <h2>Have Parts Available?</h2>
+      <p>If you're a supplier, distributor, or operator with stock to move, join our sourcing network — this helps us quote your inquiries faster too.</p>
+      <a href="/request/?intent=supplier" class="btn btn-primary" style="background:var(--slate);">Join Our Supplier Network</a>
+    </div>
+  </section>
 </main>
+
+<div class="sticky-mobile-cta"><a href="/request/">Request a Part</a></div>
 
 <footer class="site-footer">
   <div class="container foot-grid">
@@ -159,8 +191,14 @@
       <a href="mailto:info@aviateaviation.com">info@aviateaviation.com</a>
     </div>
   </div>
-  <div class="container copyright">© 2026 BizJetParts. A sourcing initiative of Aviate Aviation.</div>
+  <div class="container copyright">© 2026 BizJetParts. A sourcing initiative of Aviate Aviation. Part numbers are compiled from supplier and industry references; confirm effectivity, configuration, and supersession status before purchase or installation.</div>
 </footer>
+
+<script>
+function toggleMobileMenu(){document.getElementById('mobileMenu').classList.add('open');document.getElementById('mobileMenuOverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');document.getElementById('mobileMenuOverlay').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMobileMenu();});
+</script>
 
 </body>
 </html>
