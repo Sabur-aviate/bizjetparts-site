@@ -24,24 +24,37 @@
       <a href="/hawker-900xp/">Hawker 900XP</a>
       <a href="/request/">Request a Part</a>
     </nav>
+    <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Open menu">&#9776;</button>
   </div>
 </header>
+<div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Close menu">&times;</button>
+  <a href="/falcon-50/">Falcon 50</a>
+  <a href="/hawker-850xp/">Hawker 850XP</a>
+  <a href="/hawker-900xp/">Hawker 900XP</a>
+  <a href="/request/" class="mobile-request-btn">Request a Part</a>
+</div>
 
 <main>
   <section class="aircraft-hero">
     <div class="container">
       <div class="breadcrumb"><a href="/">Home</a> / Request a Part</div>
-      <h1>Request a Part</h1>
-      <p class="tagline">Tell us what you need. We'll source it through our supplier and broker network and respond with pricing, condition, and lead time — typically within 24 hours.</p>
+      <h1 id="formTitle">Request a Part</h1>
+      <p class="tagline" id="formTagline">Tell us what you need. We'll source it through our supplier and broker network and respond with pricing, condition, and lead time — typically within 24 hours. AOG requests are handled with priority.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container form-wrap">
 
-      <form name="part-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <form name="part-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/request/success/" enctype="multipart/form-data">
         <input type="hidden" name="form-name" value="part-request">
-        <p style="display:none;"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+        <div class="honeypot-field" aria-hidden="true">
+          <label>Leave this field blank<input tabindex="-1" autocomplete="off" name="bot-field"></label>
+        </div>
+
+        <div class="form-section-label">Aircraft & Part</div>
 
         <div class="field">
           <label for="aircraft">Aircraft *</label>
@@ -56,44 +69,111 @@
 
         <div class="field">
           <label for="part">Part Description or Number *</label>
-          <input type="text" id="part" name="part" placeholder="e.g. Main Landing Gear, LH — C23791-1009" required>
+          <input type="text" id="part" name="part" inputmode="text" placeholder="e.g. Main Landing Gear, LH — C23791-1009" required>
           <div class="hint">Part number if known, otherwise describe the part and its location/function.</div>
         </div>
 
-        <div class="field-row">
-          <div class="field">
-            <label for="condition">Condition Preference</label>
-            <select id="condition" name="condition">
-              <option value="Any">Any</option>
-              <option value="New / Factory">New / Factory</option>
-              <option value="Overhauled">Overhauled</option>
-              <option value="As-Removed / Serviceable">As-Removed / Serviceable</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="timeline">Timeline</label>
-            <select id="timeline" name="timeline">
-              <option value="AOG">AOG — Immediate</option>
-              <option value="1-2 weeks">1–2 weeks</option>
-              <option value="Planning ahead">Planning ahead</option>
-            </select>
-          </div>
+        <div class="field">
+          <label for="quantity">Quantity</label>
+          <input type="number" id="quantity" name="quantity" inputmode="numeric" min="1" value="1">
+        </div>
+
+        <div class="field">
+          <label for="condition">Condition Preference</label>
+          <select id="condition" name="condition">
+            <option value="Any acceptable condition">Any acceptable condition</option>
+            <option value="New">New</option>
+            <option value="New surplus">New surplus</option>
+            <option value="Overhauled">Overhauled</option>
+            <option value="Repaired">Repaired</option>
+            <option value="Serviceable">Serviceable</option>
+            <option value="As removed">As removed</option>
+            <option value="Exchange acceptable">Exchange acceptable</option>
+            <option value="Unsure">Unsure</option>
+          </select>
+          <div class="condition-note">"As removed" and "serviceable" are not the same condition — pick the one that applies.</div>
+        </div>
+
+        <div class="field">
+          <label for="certification">Required Certification</label>
+          <select id="certification" name="certification">
+            <option value="Any">Any / Not sure</option>
+            <option value="FAA 8130-3">FAA 8130-3</option>
+            <option value="EASA Form 1">EASA Form 1</option>
+            <option value="Dual release">Dual release (FAA + EASA)</option>
+            <option value="Certificate of Conformance">Certificate of Conformance</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="purchaseType">Purchase Type</label>
+          <select id="purchaseType" name="purchaseType">
+            <option value="Either">Either / Whichever is available</option>
+            <option value="Outright">Outright purchase</option>
+            <option value="Exchange">Exchange</option>
+          </select>
+        </div>
+
+        <div class="form-section-label">Timeline</div>
+
+        <div class="field">
+          <label for="timeline">Timeline *</label>
+          <select id="timeline" name="timeline" onchange="toggleAOG()" required>
+            <option value="Planning ahead">Planning ahead</option>
+            <option value="1-2 weeks">1–2 weeks</option>
+            <option value="AOG">AOG — Immediate</option>
+          </select>
+        </div>
+
+        <div class="aog-highlight" id="aogHighlight">
+          <strong>AOG request.</strong> For fastest response, email <a href="mailto:info@aviateaviation.com">info@aviateaviation.com</a> directly with this same information after submitting. We'll still process this form, but a direct AOG email gets priority routing.
+        </div>
+
+        <div class="field" id="requiredByField" style="display:none;">
+          <label for="requiredBy">Required-By Date</label>
+          <input type="date" id="requiredBy" name="requiredBy">
+        </div>
+
+        <div class="form-section-label">Aircraft Details</div>
+
+        <div class="field">
+          <label for="serialNumber">Aircraft Serial Number</label>
+          <input type="text" id="serialNumber" name="serialNumber">
+        </div>
+
+        <div class="field">
+          <label for="registration">Aircraft Registration (optional)</label>
+          <input type="text" id="registration" name="registration">
+        </div>
+
+        <div class="field">
+          <label for="partSerial">Part Serial Number (if applicable)</label>
+          <input type="text" id="partSerial" name="partSerial">
+        </div>
+
+        <div class="form-section-label">Attachments</div>
+
+        <div class="field">
+          <label for="fileUpload">Photo or Document</label>
+          <input type="file" id="fileUpload" name="fileUpload" accept="image/*,.pdf" capture="environment">
+          <div class="hint">Data plate, removal tag, existing 8130/Form 1, IPC page, or damaged part photo. Take a photo directly or upload a file.</div>
         </div>
 
         <div class="field">
           <label for="notes">Additional Notes</label>
-          <textarea id="notes" name="notes" rows="4" placeholder="Aircraft serial number, quantity needed, certification requirements, etc."></textarea>
+          <textarea id="notes" name="notes" rows="4" placeholder="Anything else we should know."></textarea>
         </div>
 
-        <div class="field-row">
-          <div class="field">
-            <label for="name">Name *</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="field">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required>
-          </div>
+        <div class="form-section-label">Shipping & Contact</div>
+
+        <div class="field">
+          <label for="shipTo">Ship-To City / Country</label>
+          <input type="text" id="shipTo" name="shipTo">
+        </div>
+
+        <div class="field">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
         </div>
 
         <div class="field">
@@ -102,11 +182,25 @@
         </div>
 
         <div class="field">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" inputmode="email" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit Request</button>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" inputmode="tel">
+        </div>
+
+        <div class="field">
+          <label for="contactMethod">Preferred Contact Method</label>
+          <select id="contactMethod" name="contactMethod">
+            <option value="Email">Email</option>
+            <option value="Phone">Phone</option>
+            <option value="WhatsApp">WhatsApp</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="submitBtn" style="width:100%; margin-top:10px;">Submit Request</button>
       </form>
 
     </div>
@@ -127,15 +221,36 @@
       <a href="mailto:info@aviateaviation.com">info@aviateaviation.com</a>
     </div>
   </div>
-  <div class="container copyright">© 2026 BizJetParts. A sourcing initiative of Aviate Aviation.</div>
+  <div class="container copyright">© 2026 BizJetParts. A sourcing initiative of Aviate Aviation. Part numbers are compiled from supplier and industry references; confirm effectivity, configuration, and supersession status before purchase or installation.</div>
 </footer>
 
 <script>
-// Prefill from query params (?part=X&ac=falcon-50) when arriving from an aircraft page
 const params = new URLSearchParams(window.location.search);
 const acMap = { 'falcon-50': 'Falcon 50', 'hawker-850xp': 'Hawker 850XP', 'hawker-900xp': 'Hawker 900XP' };
 if (params.get('part')) document.getElementById('part').value = decodeURIComponent(params.get('part'));
 if (params.get('ac') && acMap[params.get('ac')]) document.getElementById('aircraft').value = acMap[params.get('ac')];
+if (params.get('intent') === 'supplier') {
+  document.getElementById('formTitle').textContent = 'Join Our Supplier Network';
+  document.getElementById('formTagline').textContent = "Tell us what you carry and we'll reach out when a matching request comes in. Use the fields below as a starting point — mention \"supplier\" in the notes.";
+}
+
+function toggleAOG() {
+  const t = document.getElementById('timeline').value;
+  const aog = document.getElementById('aogHighlight');
+  const req = document.getElementById('requiredByField');
+  if (t === 'AOG') { aog.classList.add('show'); req.style.display = 'block'; }
+  else { aog.classList.remove('show'); req.style.display = 'none'; }
+}
+
+document.querySelector('form').addEventListener('submit', function() {
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Submitting…';
+});
+
+function toggleMobileMenu(){document.getElementById('mobileMenu').classList.add('open');document.getElementById('mobileMenuOverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');document.getElementById('mobileMenuOverlay').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMobileMenu();});
 </script>
 
 </body>
