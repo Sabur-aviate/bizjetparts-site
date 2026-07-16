@@ -216,3 +216,145 @@ footer.site-footer .copyright { border-top: 1px solid #3d5165; margin-top: 30px;
   .hero h1 { font-size: 24px; }
   table.parts-table thead th, table.parts-table tbody td { padding: 9px 8px; font-size: 13px; }
 }
+
+/* ============ MOBILE OVERHAUL ADDITIONS ============ */
+
+/* Hamburger menu */
+.hamburger-btn {
+  display: none; background: none; border: 1px solid rgba(255,255,255,0.3);
+  color: var(--white); width: 40px; height: 40px; border-radius: 2px;
+  font-size: 20px; cursor: pointer; align-items: center; justify-content: center;
+}
+.mobile-menu-overlay {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100;
+}
+.mobile-menu-overlay.open { display: block; }
+.mobile-menu {
+  position: fixed; top: 0; right: 0; bottom: 0; width: 82%; max-width: 320px;
+  background: var(--charcoal); z-index: 101; padding: 20px; transform: translateX(100%);
+  transition: transform 0.2s ease; display: flex; flex-direction: column;
+}
+.mobile-menu.open { transform: translateX(0); }
+.mobile-menu-close {
+  align-self: flex-end; background: none; border: none; color: var(--white);
+  font-size: 26px; cursor: pointer; margin-bottom: 20px; width: 44px; height: 44px;
+}
+.mobile-menu a {
+  color: var(--white); text-decoration: none; font-size: 17px; padding: 14px 4px;
+  border-bottom: 1px solid #3d5165; min-height: 48px; display: flex; align-items: center;
+}
+.mobile-menu a.mobile-request-btn {
+  background: var(--slate); color: var(--white); justify-content: center;
+  border-radius: 2px; margin-top: 16px; border-bottom: none; font-weight: 600;
+}
+
+@media (max-width: 860px) {
+  .hamburger-btn { display: flex; }
+  nav.main-nav { display: none !important; }
+}
+
+/* Sticky mobile request CTA */
+.sticky-mobile-cta { display: none; }
+@media (max-width: 720px) {
+  .sticky-mobile-cta {
+    display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+    background: var(--white); border-top: 1px solid var(--rule); padding: 10px 16px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+  }
+  .sticky-mobile-cta a {
+    display: block; text-align: center; background: var(--slate); color: var(--white);
+    text-decoration: none; padding: 13px; border-radius: 2px; font-weight: 600; font-size: 15px;
+    min-height: 48px; display: flex; align-items: center; justify-content: center;
+  }
+  body.has-sticky-cta main { padding-bottom: 64px; }
+}
+
+/* Aircraft info block: responsive grid instead of flex row */
+@media (max-width: 600px) {
+  .spec-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+}
+
+/* Filter chips: explicit scroll affordance */
+.parts-toolbar select#systemFilter { -webkit-appearance: menulist; }
+@media (max-width: 720px) {
+  .parts-toolbar { position: relative; }
+}
+
+/* ===== Mobile card table (data-label technique) ===== */
+@media (max-width: 720px) {
+  .table-scroll { overflow-x: visible; }
+  table.parts-table, table.parts-table thead, table.parts-table tbody,
+  table.parts-table th, table.parts-table td, table.parts-table tr {
+    display: block; width: 100%;
+  }
+  table.parts-table { min-width: 0; }
+  table.parts-table thead { position: absolute; top: -9999px; left: -9999px; }
+  table.parts-table tbody tr {
+    border: 1px solid var(--rule); margin-bottom: 14px; padding: 14px 14px 10px;
+    background: var(--white); position: relative;
+  }
+  table.parts-table tbody td {
+    border: none; padding: 4px 0; display: flex; align-items: baseline; gap: 8px;
+    flex-wrap: wrap;
+  }
+  table.parts-table tbody td:nth-child(1) { order: 3; font-size: 12px; color: var(--steel); }
+  table.parts-table tbody td:nth-child(2) { order: 4; font-size: 12px; color: var(--steel); }
+  table.parts-table tbody td:nth-child(3) { order: 2; font-weight: 600; font-size: 15px; color: var(--charcoal); padding-top: 2px; }
+  table.parts-table tbody td:nth-child(4) { order: 1; padding-bottom: 6px; }
+  table.parts-table tbody td:nth-child(5) { order: 5; margin-top: 10px; width: 100%; }
+  table.parts-table tbody td:nth-child(5) a.req-link {
+    display: flex; align-items: center; justify-content: center; width: 100%;
+    border: 1px solid var(--slate); padding: 10px; min-height: 44px; border-radius: 2px;
+  }
+  table.parts-table tbody td:nth-child(1)::before { content: "ATA "; }
+  table.parts-table tbody td:nth-child(2)::before { content: ""; }
+  table.parts-table tbody td { display: flex; flex-direction: column; }
+  table.parts-table tbody td:nth-child(1), table.parts-table tbody td:nth-child(2) {
+    display: inline-flex; flex-direction: row; width: auto;
+  }
+  .pn-tag { font-size: 14px; padding: 5px 10px; }
+}
+
+/* Disclaimer callouts */
+.disclaimer-box {
+  background: #F3EFE4; border-left: 3px solid var(--slate); padding: 14px 18px;
+  font-size: 13px; color: #4a5a68; margin: 20px 0; line-height: 1.55;
+}
+
+/* Trust section */
+.trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 24px; }
+.trust-item { background: var(--white); border: 1px solid var(--rule); padding: 18px; font-size: 14px; }
+.trust-item .trust-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--slate-dark); margin-bottom: 6px; display: block; }
+
+/* Form improvements */
+.field input[type="file"] {
+  padding: 10px; font-size: 14px; background: var(--white);
+}
+.field input, .field select, .field textarea, .field input[type="file"] {
+  min-height: 48px; font-size: 16px;
+}
+.field textarea { min-height: unset; }
+.form-section-label {
+  font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--steel); margin: 28px 0 14px; padding-top: 18px;
+  border-top: 1px solid var(--rule);
+}
+.form-section-label:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+.honeypot-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.aog-highlight {
+  background: #FDF3E7; border: 1px solid #D9A441; padding: 12px 14px; font-size: 13px;
+  margin-top: 8px; display: none;
+}
+.aog-highlight.show { display: block; }
+.condition-note { font-size: 12px; color: var(--steel); margin-top: 4px; }
+
+@media (max-width: 720px) {
+  .field-row { grid-template-columns: 1fr !important; }
+}
+
+/* Supplier intake CTA card */
+.supplier-cta {
+  background: var(--charcoal); color: var(--white); padding: 32px; text-align: center;
+}
+.supplier-cta h2 { color: var(--white); font-size: 22px; margin-bottom: 10px; }
+.supplier-cta p { color: var(--steel); margin-bottom: 18px; font-size: 14px; max-width: 480px; margin-left: auto; margin-right: auto; }
